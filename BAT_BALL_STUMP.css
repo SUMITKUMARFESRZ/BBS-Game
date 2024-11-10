@@ -1,32 +1,44 @@
 /* BAT_BALL_STUMP.css */
-*{
+* {
     box-sizing: border-box;
 }
-html, body{
+
+html, body {
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
-.main{
+
+.main {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #3498db, #f36060);
     text-align: center;
-    height: 90%;
-    margin: 15px;
+    width: 100%;
+    height: 100vh; 
+    background: linear-gradient(to right, #3498db, #f36060); 
+    margin: 0;
     padding: 20px;
     border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
 }
+
 h1 {
-    color: #2c3e50; 
-    font-size:4em;
+    color: #2c3e50;
+    font-size: 4em;
 }
+
 h3 {
     color: #34495e;
     font-size: 2em;
 }
-.ch{
+
+.ch {
     color: #34495e;
     font-size: 1.5em;
-
 }
 
 button {
@@ -43,5 +55,5 @@ button {
 
 button:hover {
     background: linear-gradient(45deg, #2ecc71, #3498db);
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
