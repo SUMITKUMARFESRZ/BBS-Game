@@ -1,25 +1,28 @@
 // BAT_BALL_STUMP
-let Win= 0;
-let Lose= 0;
-let Draw= 0;
-
+let store={
+    Win: 0,
+    Lose:0,
+    Draw:0
+    
+};
 function Bat() {
     let a = Math.random() * 3; 
     let b = Math.floor(a); 
     console.log("Generated value:", b); 
     if (b == 0) {
-        Draw++;
-        alert(`Draw! Computer also Choose Bat
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+        store.Draw++;
+        alert(`store.Draw! Computer also Choose Bat
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     } else if (b == 1) {
-        Win++;
+        store.Win++;
         alert(`User won!Computer Choose Ball
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     } else if (b == 2) {
-        Lose++;
-        alert(`User Lose! Computer Choose Stump
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+        store.Lose++;
+        alert(`User store.Lose! Computer Choose Stump
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     }
+    localStorage.setItem("StoredValue",JSON.stringify(store));
 }
 function Ball() {
     let a = Math.random() * 3;
@@ -27,18 +30,19 @@ function Ball() {
     console.log("Generated value:", b);
 
     if (b == 1) {
-        Draw++;
-        alert(`Draw! Computer also Choose Ball
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+        store.Draw++;
+        alert(`store.Draw! Computer also Choose Ball
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     } else if (b == 2) {
-        Win++;
+        store.Win++;
         alert(`User won! Computer Choose Stump
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     } else if (b == 0) {
-        Lose++;
-        alert(`User Lose! Computer Choose Bat
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+        store.Lose++;
+        alert(`User store.Lose! Computer Choose Bat
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     }
+    localStorage.setItem("StoredValue",JSON.stringify(store));
 }
 function Wic() {
     let a = Math.random() * 3;
@@ -46,16 +50,24 @@ function Wic() {
     console.log("Generated value:", b); 
 
     if (b == 2) {
-        Draw++;
-        alert(`Draw!Computer also Choose Stump
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+        store.Draw++;
+        alert(`store.Draw!Computer also Choose Stump
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     } else if (b == 0) {
-        Win++;
+        store.Win++;
         alert(`User won! Computer Choose Bat
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     } else if (b == 1) {
-        Lose++;
-        alert(`User Lose! Computer Choose Ball
-Win:${Win} Lose:${Lose} Draw:${Draw}`);
+        store.Lose++;
+        alert(`User store.Lose! Computer Choose Ball
+Win${store.Win} Lose${store.Lose} Draw${store.Draw}`);
     }
+    localStorage.setItem("StoredValue",JSON.stringify(store));
+}
+function Reset(){
+    store.Win=0;
+    store.Lose=0;
+    store.Draw=0;
+    localStorage.setItem("StoredValue",JSON.stringify(store));
+
 }
